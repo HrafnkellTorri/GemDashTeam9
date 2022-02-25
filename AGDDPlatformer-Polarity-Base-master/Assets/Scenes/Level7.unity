@@ -417,7 +417,7 @@ PrefabInstance:
         type: 3}
       propertyPath: exit
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1032845535}
     - target: {fileID: 3576097653803380405, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
       propertyPath: m_Name
