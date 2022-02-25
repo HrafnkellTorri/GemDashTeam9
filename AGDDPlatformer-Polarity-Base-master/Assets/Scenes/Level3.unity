@@ -128968,6 +128968,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4691332085822845703, guid: 1d096467bd11505479937aff780e5cd2,
+        type: 3}
+      propertyPath: nextLevel
+      value: Level4
+      objectReference: {fileID: 0}
     - target: {fileID: 4691332086094480774, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_textAlignment
@@ -128986,7 +128991,7 @@ PrefabInstance:
     - target: {fileID: 4691332086608218244, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.2775946
+      value: 8.584445
       objectReference: {fileID: 0}
     - target: {fileID: 4691332086616792638, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
