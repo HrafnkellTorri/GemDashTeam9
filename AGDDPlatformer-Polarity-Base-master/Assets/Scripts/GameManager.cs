@@ -122,10 +122,7 @@ namespace AGDDPlatformer
 
         void ResetLevel()
         {
-            foreach (PlayerController player in players)
-            {
-                player.ResetPlayer();
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
