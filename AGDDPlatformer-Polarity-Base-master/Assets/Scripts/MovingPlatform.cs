@@ -12,6 +12,7 @@ namespace AGDDPlatformer
         public Transform EndPoint;
         public bool stopped;
         public bool startPaused;
+        public bool arrived;
 
         enum Points
         {
@@ -20,10 +21,6 @@ namespace AGDDPlatformer
 
         private Points GoingTowards = Points.End;
 
-        new void Start()
-        {
-            if (startPaused) StartCoroutine(StopForTime(2));
-        }
 
         void Update()
         {
@@ -32,7 +29,8 @@ namespace AGDDPlatformer
             Vector2 startToEnd = EndPoint.position - StartPoint.position;
             Vector2 progressToEnd = EndPoint.position - transform.position;
             Vector2 progressToStart = StartPoint.position - transform.position;
-            if (GoingTowards == Points.End)
+            
+            if (GoingTowards == Points.End )
             {
                 velocity = progressToEnd.normalized * Speed;
             }
@@ -40,19 +38,20 @@ namespace AGDDPlatformer
             {
                 velocity = progressToStart.normalized * Speed;
             }
+            if(GoingTowards == Points.End && Vector2.Dot(progressToEnd, startToEnd) <= 0 || GoingTowards == Points.Start && Vector2.Dot(progressToStart, -startToEnd) <= 0)
+            {
+                velocity = new Vector2(0, 0);
+            }
 
             if (GoingTowards == Points.End && Vector2.Dot(progressToEnd, startToEnd) <= 0)
             {
-                if (GoingTowards == Points.End) StartCoroutine(StopForTime(2f));
-                GoingTowards = Points.Start;
-                
-                
+                if (GoingTowards == Points.End && GameManager.instance.Stop) GoingTowards = Points.Start;
+
             }
             else if (GoingTowards == Points.Start && Vector2.Dot(progressToStart, -startToEnd) <= 0)
             {
-                if (GoingTowards == Points.Start) StartCoroutine(StopForTime(2f));
-                GoingTowards = Points.End;
-                
+                if (GoingTowards == Points.Start && GameManager.instance.Stop) GoingTowards = Points.End;
+
             }
         }
 
@@ -86,14 +85,5 @@ namespace AGDDPlatformer
             //otherBody.GetComponent<PlayerController>()?.SetJumpBoost(new Vector2(velocity.x, 0));
         }
 
-        IEnumerator StopForTime(float time)
-        {
-            if (!stopped)
-            {
-                isFrozen = true;
-                yield return new WaitForSeconds(time);
-                isFrozen = false;
-            }
-        }
     }
 }

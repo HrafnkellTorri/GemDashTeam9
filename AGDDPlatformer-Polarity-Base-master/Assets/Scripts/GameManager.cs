@@ -30,11 +30,12 @@ namespace AGDDPlatformer
         [Header("Audio")]
         public AudioSource source;
         public AudioClip winSound;
+        public bool Stop;
 
         void Awake()
         {
             instance = this;
-
+            StartCoroutine(StopForTime());
             if (playerGoals.Length == 0)
             {
                 playerGoals = FindObjectsOfType<PlayerGoal>();
@@ -122,10 +123,16 @@ namespace AGDDPlatformer
 
         void ResetLevel()
         {
-            foreach (PlayerController player in players)
-            {
-                player.ResetPlayer();
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public IEnumerator StopForTime()
+        {
+            Stop = true;
+            yield return new WaitForSeconds(1);
+            Stop = false;
+            yield return new WaitForSeconds(2);
+            StartCoroutine(StopForTime());
         }
     }
 }
