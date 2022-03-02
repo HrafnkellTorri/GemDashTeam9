@@ -10,6 +10,8 @@ namespace AGDDPlatformer
         public float Speed; //Probably should be the same as player max speed
         public Transform StartPoint;
         public Transform EndPoint;
+        public bool stopped;
+        public bool startPaused;
 
         enum Points
         {
@@ -18,8 +20,14 @@ namespace AGDDPlatformer
 
         private Points GoingTowards = Points.End;
 
+        new void Start()
+        {
+            if (startPaused) StartCoroutine(StopForTime(2));
+        }
+
         void Update()
         {
+            
             //Move the platform back and forth between the start and end points
             Vector2 startToEnd = EndPoint.position - StartPoint.position;
             Vector2 progressToEnd = EndPoint.position - transform.position;
@@ -35,11 +43,16 @@ namespace AGDDPlatformer
 
             if (GoingTowards == Points.End && Vector2.Dot(progressToEnd, startToEnd) <= 0)
             {
+                if (GoingTowards == Points.End) StartCoroutine(StopForTime(2f));
                 GoingTowards = Points.Start;
+                
+                
             }
             else if (GoingTowards == Points.Start && Vector2.Dot(progressToStart, -startToEnd) <= 0)
             {
+                if (GoingTowards == Points.Start) StartCoroutine(StopForTime(2f));
                 GoingTowards = Points.End;
+                
             }
         }
 
@@ -70,7 +83,17 @@ namespace AGDDPlatformer
             //We can detatch if the object exits the collision.
             otherBody.Detatch();
             //If it is a player, give them a small boost to simulate inertia.
-            otherBody.GetComponent<PlayerController>()?.SetJumpBoost(new Vector2(velocity.x, 0));
+            //otherBody.GetComponent<PlayerController>()?.SetJumpBoost(new Vector2(velocity.x, 0));
+        }
+
+        IEnumerator StopForTime(float time)
+        {
+            if (!stopped)
+            {
+                isFrozen = true;
+                yield return new WaitForSeconds(time);
+                isFrozen = false;
+            }
         }
     }
 }
