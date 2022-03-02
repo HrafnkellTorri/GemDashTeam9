@@ -5,13 +5,15 @@ using UnityEngine;
 namespace AGDDPlatformer {
     public class TeleporterScript : MonoBehaviour {
         [SerializeField] GameObject exit;
+        [SerializeField] AudioSource tp_audio;
 
         private void OnTriggerEnter2D(Collider2D collision) {
             if (exit) {
-
                 PlayerController pc = collision.GetComponent<PlayerController>();
 
                 if (pc) {
+                    tp_audio.Play();
+
                     // Offset so that player shows up at a position that makes sense
                     Vector3 y_offset = new Vector3(0, collision.transform.localScale.y / 2, 0) * pc.gravityModifier;
                     collision.transform.position = exit.transform.position - y_offset + (collision.transform.localScale.y * exit.transform.up);

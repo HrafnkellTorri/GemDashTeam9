@@ -236,7 +236,7 @@ PrefabInstance:
     - target: {fileID: 3576097653803380407, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3576097653803380407, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
@@ -417,16 +417,16 @@ PrefabInstance:
         type: 3}
       propertyPath: exit
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1110749071}
     - target: {fileID: 3576097653803380405, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
       propertyPath: m_Name
-      value: Teleporter 5 exit (1)
+      value: Teleporter 7 exit
       objectReference: {fileID: 0}
     - target: {fileID: 3576097653803380407, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3576097653803380407, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
@@ -625,6 +625,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3108059500495987002, guid: fbf1327cb05e93146a4767d6fc3459b0,
         type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108059500495987002, guid: fbf1327cb05e93146a4767d6fc3459b0,
+        type: 3}
       propertyPath: m_Name
       value: PlayerGoal2
       objectReference: {fileID: 0}
@@ -781,12 +786,12 @@ PrefabInstance:
     - target: {fileID: 3576097653803380405, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
       propertyPath: m_Name
-      value: Teleporter 5 (1)
+      value: Teleporter 5
       objectReference: {fileID: 0}
     - target: {fileID: 3576097653803380407, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3576097653803380407, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
@@ -1001,6 +1006,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22b1180d25a3ad4ab5a6a3b7f17c12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1110749071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3576097653803380405, guid: a26e227ea2a098249b96b6861bfabfcb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1789624158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1207612003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1111,7 +1122,7 @@ PrefabInstance:
     - target: {fileID: 3576097653803380407, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3576097653803380407, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
@@ -1296,12 +1307,12 @@ PrefabInstance:
     - target: {fileID: 3576097653803380405, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
       propertyPath: m_Name
-      value: Teleporter 5
+      value: Teleporter 7
       objectReference: {fileID: 0}
     - target: {fileID: 3576097653803380407, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3576097653803380407, guid: a26e227ea2a098249b96b6861bfabfcb,
         type: 3}
@@ -1925,7 +1936,7 @@ PrefabInstance:
     - target: {fileID: 4691332087007920044, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_text
-      value: Level 7
+      value: Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 4691332087007920044, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
@@ -1974,7 +1985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8399958467186111749}
   m_Layer: 0
-  m_Name: Level-7
+  m_Name: Level-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
