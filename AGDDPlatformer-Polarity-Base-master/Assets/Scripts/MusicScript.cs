@@ -13,7 +13,6 @@ public class MusicScript : MonoBehaviour {
         }
 
         DontDestroyOnLoad(this);
-        music.time = 90f;
     }
 
     private void Update() {
@@ -24,7 +23,6 @@ public class MusicScript : MonoBehaviour {
             fade_out = false;
         }
         else if (music.time > 93f && !fade_out) {
-            Debug.Log("Starting fade out");
             StartCoroutine(FadeOut(music, 3.0f, 0.02f));
             fade_out = true;
         }
